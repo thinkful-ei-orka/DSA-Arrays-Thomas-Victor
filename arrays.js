@@ -211,6 +211,7 @@ function productArray(arr) {
 
 console.log(productArray([1, 3, 9, 4]))
 
+
 module.exports = 
      Array,
      main()
