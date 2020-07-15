@@ -211,6 +211,64 @@ function productArray(arr) {
 
 console.log(productArray([1, 3, 9, 4]))
 
+function twoD(arr) {
+     let newArr = [];
+
+     for(let i = 0; i < arr.length; i++) {
+          let innerArr = [];
+          for(let j = 0; j < arr[i].length; j++) {
+               innerArr.push(1)
+          }
+          newArr.push(innerArr)
+     }
+
+     console.log(newArr)
+
+     for(let i = 0; i < arr.length; i++) {
+          for(let j = 0; j < arr.length; j++) {
+               if(arr[i][j] === 0) {
+                    for (let k = 0; k < arr[i].length; k++) {
+                         newArr[i][k] = 0;
+                    }
+                    for (let k = 0; k < arr.length; k++) {
+                         newArr[k][j] = 0;
+                    }
+                    
+               }
+          }
+     }
+     return newArr
+};
+
+const TwoDArr = [[1,0,1,1,0],
+[0,1,1,1,0],
+[1,1,1,1,1],
+[1,0,1,1,1],
+[1,1,1,1,1]]
+
+console.log(twoD(TwoDArr))
+
+//compare order of letters moved to the end with the original word based on the number of letters moved?
+
+function rotate(str, str2) {
+     if (str.length !== str2.length) {
+          return false
+     }
+
+     let doubles = str + str;
+     for (let i = 1; i < str.length; i++) {
+          let slicedString = doubles.slice(i, str.length + i)
+          if (slicedString === str2) {
+               return true
+          }
+
+     }
+     return false;
+}
+
+console.log(rotate('amazon', 'azonma'))
+console.log(rotate('amazon','azonam'))
+
 
 module.exports = 
      Array,
