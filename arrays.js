@@ -153,6 +153,64 @@ function merge(arr1, arr2) {
 
 console.log(merge([1, 3, 6, 8, 11, 12], [2, 3, 5, 8, 9, 10, 15]));
 
+function removeChar(string, filter) {
+     let stringArray=[];
+     let filteredStr = '';
+     let filters = [];
+     let filteredArray =[];
+
+     for(let i = 0; i < string.length; i++) {
+          stringArray.push(string.slice(i, i + 1))
+     }
+     console.log(stringArray)
+
+     for(let i = 0; i < filter.length; i++) {
+          filters.push(filter.slice(i, i + 1))
+     }
+     console.log(filters)
+
+     for(let i = 0; i < string.length; i++) {
+          let counter = 0;
+          for(let j = 0; j < filter.length; j++) {
+               if (stringArray[i] == filters[j]) {
+                    break;
+               }
+               counter++;
+          }
+          if (counter == filter.length) {
+               filteredArray.push(stringArray[i])
+          }
+     }
+
+     for(let i = 0; i < filteredArray.length; i++) {
+          filteredStr = filteredStr + filteredArray[i]
+     }
+
+     console.log(filteredStr)
+     return filteredStr
+}
+
+console.log(removeChar('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+
+function productArray(arr) {
+     let newArray = [];
+     
+     for(let i = 0; i < arr.length; i++) {
+          let product = 1;
+          for(let j = 0; j < arr.length; j++) {
+               if (i !== j) {
+                    product *= arr[j]
+               }
+          }
+     newArray.push(product)          
+     }
+
+     console.log(newArray)
+     return newArray
+}
+
+console.log(productArray([1, 3, 9, 4]))
+
 module.exports = 
      Array,
      main()
