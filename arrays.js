@@ -190,7 +190,27 @@ function removeChar(string, filter) {
      return filteredStr
 }
 
-console.log(removeChar('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+// console.log(removeChar('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+
+function removeCharTwo(string, filter) {
+     let newString = '';
+     for(let i = 0; i < string.length; i++) {
+          let valid = true
+          for(let j = 0; j < filter.length; j++) {
+               if (string[i] == filter[j]) {
+                    valid = false
+                    break;
+               }
+          }
+          if (valid) {
+               newString += string[i]
+          }
+     }
+     return newString
+}
+
+console.log(removeCharTwo('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+
 
 function productArray(arr) {
      let newArray = [];
