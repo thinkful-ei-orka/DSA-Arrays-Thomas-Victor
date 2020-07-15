@@ -135,6 +135,24 @@ function max(arr) {
 
 max([4, 6, -3, 5, -2, 1])
 
+function merge(arr1, arr2) {
+     const arrayMerge= [];
+     let indexA = 0;
+     let indexB = 0;
+     while(arrayMerge.length < (arr1.length + arr2.length)) {
+          if(arr1[indexA] < arr2[indexB] || !arr2[indexB]) {
+               arrayMerge.push(arr1[indexA]);
+               indexA++
+          } else {
+               arrayMerge.push(arr2[indexB]);
+               indexB++
+          }
+     }
+     return arrayMerge;
+}
+
+console.log(merge([1, 3, 6, 8, 11, 12], [2, 3, 5, 8, 9, 10, 15]));
+
 module.exports = 
      Array,
      main()
