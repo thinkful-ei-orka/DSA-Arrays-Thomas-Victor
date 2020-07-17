@@ -276,14 +276,14 @@ function rotate(str, str2) {
      }
 
      let doubles = str + str;
-     for (let i = 1; i < str.length; i++) {
-          let slicedString = doubles.slice(i, str.length + i)
-          if (slicedString === str2) {
-               return true
-          }
-
-     }
-     return false;
+     // for (let i = 1; i < str.length; i++) {
+     //      let slicedString = doubles.slice(i, str.length + i)
+     //      if (slicedString === str2) {
+     //           return true
+     //      }
+     // }
+     return doubles.includes(str2)
+     // return false;
 }
 
 console.log(rotate('amazon', 'azonma'))
